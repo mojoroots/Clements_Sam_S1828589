@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e("MyTag","in onCreate");
+        Log.e("Tag","onCreate");
         // Set up the raw links to the graphical components
         //rawDataDisplay = (TextView)findViewById(R.id.rawDataDisplay);
         startButton = (Button)findViewById(R.id.startButton);
@@ -285,7 +285,7 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
         // ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.listview, ItemKeeper.itemTitles);
 //list.setBackgroundColor(Color.parseColor());
-        Log.e("MyTag","after startButton");
+        Log.e("Tag","start Button");
 
     }
 
@@ -298,9 +298,9 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             clear();
             dateCheckTrigger = false;
 
-            Log.e("MyTag", "in onClick");
+            Log.e("Tag", "onClick");
             startProgress();
-            Log.e("MyTag", "after startProgress");
+            Log.e("Tag", "start Progress");
             MapButton.setEnabled(true);
 
 
@@ -422,27 +422,27 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
 
-            Log.e("MyTag","in run");
+            Log.e("Tag","run");
 
             try
             {
-                Log.e("MyTag","in try");
+                Log.e("Tag","try");
                 aurl = new URL(url);
                 yc = aurl.openConnection();
                 in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
-                Log.e("MyTag","after ready");
+                Log.e("Tag","after ready");
 
                 while ((inputLine = in.readLine()) != null)
                 {
                     result = result + inputLine;
-                    Log.e("MyTag",inputLine);
+                    Log.e("Tag",inputLine);
 
                 }
                 in.close();
             }
             catch (IOException ae)
             {
-                Log.e("MyTag", "ioexception in run");
+                Log.e("Tag", "ioexception run");
             }
 
 
@@ -450,7 +450,7 @@ list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             MainActivity.this.runOnUiThread(new Runnable()
             {
                 public void run() {
-                    Log.d("UI thread", "I am the UI thread");
+                    Log.d("UI thread", "UI thread");
                     parseData(result);
 
 
@@ -696,7 +696,7 @@ public void depth()
                                     if(xpp.getName().equalsIgnoreCase("Lat"))
                                     {
                                         String text = xpp.nextText();
-                                        Log.d("MyTag", "geoLat saved as: " + text);
+                                        Log.d("Tag", "geoLat saved as: " + text);
                                         item.setGeoLat(text);
 
 
@@ -706,7 +706,7 @@ public void depth()
                                     if(xpp.getName().equalsIgnoreCase("Long"))
                                     {
                                         String text = xpp.nextText();
-                                        Log.d("MyTag", "geoLat saved as: " + text);
+                                        Log.d("Tag", "geoLat saved as: " + text);
                                         item.setGeoLong(text);
                                     }
                     }
@@ -724,7 +724,7 @@ public void depth()
                                 item.setMag(magTemp);
 
 
-                            Log.d("MyTag", "Item: " + item.toString());
+                            Log.d("Tag", "Item: " + item.toString());
 
 
                             if (!dateCheckTrigger) {
@@ -768,12 +768,12 @@ public void depth()
             }
             catch (XmlPullParserException ae1)
             {
-                Log.e("MyTag","Parsing error" + ae1.toString());
+                Log.e("Tag","Parsing error" + ae1.toString());
             }
 
             catch (IOException ae1)
             {
-                Log.e("MyTag","IO error during parsing");
+                Log.e("Tag","IO parsing error");
             }
 
 

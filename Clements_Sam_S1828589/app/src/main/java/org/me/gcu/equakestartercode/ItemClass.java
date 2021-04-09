@@ -208,7 +208,7 @@ public class ItemClass {
             System.out.println("QuakeDate"+quakeDate);
         } catch (ParseException e) {
 
-            Log.e("READ", "Quake date missing");
+            Log.e("Tag", "Quake dateS missing");
         }
 
 
@@ -250,7 +250,7 @@ public class ItemClass {
             System.out.println("QuakeDate"+quakeDate);
         } catch (ParseException e) {
 
-            Log.e("READ", "Quake date missing");
+            Log.e("Tag", "Quake date is missing");
         }
         return quakeDate;
     }
